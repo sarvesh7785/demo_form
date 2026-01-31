@@ -1,13 +1,14 @@
 import streamlit as st
 
-st.title("Simple Streamlit Form")
+st.set_page_config(page_title="My First Streamlit App")
 
-with st.form("my_form"):
-    name = st.text_input("Enter your name")
-    age = st.number_input("Enter your age", min_value=0, max_value=120)
-    submitted = st.form_submit_button("Submit")
+st.title("👋 Hello Streamlit")
+st.write("This is a simple Streamlit app")
 
-if submitted:
-    st.success("Form submitted successfully!")
-    st.write("Name:", name)
-    st.write("Age:", age)
+name = st.text_input("Enter your name")
+
+if name:
+    st.success(f"Welcome, {name}!")
+
+number = st.slider("Pick a number", 0, 100, 50)
+st.write("You selected:", number)
